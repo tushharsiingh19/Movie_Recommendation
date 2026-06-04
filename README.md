@@ -1,16 +1,174 @@
-# React + Vite
+# 🎬 Movie Recommendation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Movie Recommendation System that uses Machine Learning and Content-Based Filtering to recommend movies similar to a user's selected movie. The application features a modern React frontend, a Flask backend, and a cosine similarity recommendation engine trained on TMDB movie data.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Movie search using TMDB API
+* Content-based movie recommendations
+* Machine Learning recommendation engine
+* Interactive React user interface
+* Flask REST API backend
+* Movie posters and details integration
+* Popular movie browsing
+* Responsive and modern UI
+* Real-time recommendation generation
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
 
-## Expanding the ESLint configuration
+* React.js
+* JavaScript
+* CSS
+* TMDB API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+
+* Flask
+* Flask-CORS
+* Pandas
+* Requests
+
+### Machine Learning
+
+* Scikit-Learn
+* CountVectorizer
+* Cosine Similarity
+* Content-Based Filtering
+
+## 📊 Machine Learning Workflow
+
+1. Movie metadata is collected from the TMDB dataset.
+2. Features such as overview, genres, keywords, cast, and crew are combined.
+3. Text data is vectorized using CountVectorizer.
+4. Cosine Similarity is computed between movies.
+5. Similar movies are recommended based on similarity scores.
+
+## 📁 Project Structure
+
+Movie_Recommendation/
+
+├── frontend/
+
+│ └── MovieRecommender.jsx
+
+├── backend/
+
+│ ├── app.py
+
+│ ├── movies.pkl
+
+│ └── similarity.pkl
+
+├── requirements.txt
+
+└── README.md
+
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/tushharsiingh19/Movie_Recommendation.git
+cd Movie_Recommendation
+```
+
+### Backend Setup
+
+```bash
+pip install flask flask-cors pandas scikit-learn requests
+python app.py
+```
+
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+### Frontend Setup
+
+```bash
+npm install
+npm start
+```
+
+Frontend runs on:
+
+```text
+http://localhost:3000
+```
+
+## API Endpoints
+
+### Get Recommendations
+
+```http
+POST /recommend
+```
+
+Request:
+
+```json
+{
+  "movie": "Inception"
+}
+```
+
+Response:
+
+```json
+{
+  "movie": "Inception",
+  "recommendations": [
+    "Interstellar",
+    "The Matrix",
+    "The Dark Knight"
+  ]
+}
+```
+
+### Get Movies
+
+```http
+GET /movies
+```
+
+### Health Check
+
+```http
+GET /health
+```
+
+## Dataset
+
+The recommendation engine is trained using the TMDB 5000 Movie Dataset, which contains information about:
+
+* Movie titles
+* Genres
+* Keywords
+* Cast
+* Crew
+* Overviews
+
+## Future Enhancements
+
+* User authentication
+* Favorite movies list
+* Collaborative filtering
+* Hybrid recommendation system
+* Deep Learning recommendations
+* Movie trailers integration
+* Cloud deployment
+* Personalized user profiles
+
+## Author
+
+Tushar Singh
+
+B.Tech CSE, NIT Kurukshetra
+
+## License
+
+This project is developed for educational and portfolio purposes.
