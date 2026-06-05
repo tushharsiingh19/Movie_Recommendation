@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 const TMDB_API_KEY = "2ae3b76f4b488d16adecb70bb793a326"; // 🔑 Replace with your TMDB API key
 const TMDB_BASE    = "https://api.themoviedb.org/3";
 const TMDB_IMG     = "https://image.tmdb.org/t/p/w500";
-const BACKEND_URL  = "http://localhost:5000"; // 🔗 Your Flask/FastAPI backend
+const BACKEND_URL  = "https://movie-recommendation-1-84na.onrender.com/" // 🔗 Your Flask/FastAPI backend
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
 async function fetchPopularMovies(page = 1) {

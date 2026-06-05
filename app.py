@@ -170,7 +170,13 @@ def health():
         "movies_loaded": len(movies_df) if movies_df is not None else 0,
         "model_loaded": similarity is not None
     })
-
+@app.route("/")
+def home():
+    return jsonify({
+        "message": "Movie Recommender API is running",
+        "health": "/health",
+        "movies": "/movies"
+    })
 
 # ── NOTEBOOK: HOW TO TRAIN & SAVE YOUR OWN MODEL ─────────────────────────────
 """
