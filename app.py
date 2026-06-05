@@ -170,6 +170,7 @@ def health():
         "movies_loaded": len(movies_df) if movies_df is not None else 0,
         "model_loaded": similarity is not None
     })
+load_models()
 @app.route("/")
 def home():
     return jsonify({
